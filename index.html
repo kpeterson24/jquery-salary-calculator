@@ -6,10 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery-3.4.1.min.js"></script>
     <script src="client.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+    <main>
+        <section>
+        <h2>Add Employee</h2>
+        <form>
+        <div class="employee-form-div" id="add-employee-form">
+            <input type="text" id="first-name-input" placeholder="First Name" />
+            <input type="text" id="last-name-input" placeholder="Last Name" />
+            <input type="text" id="id-input" placeholder="ID" />
+            <input type="text" id="title-input" placeholder="Title" />
+            <input type="number" id="annual-salary-input" placeholder="Annual Salary" />        </div>
+        <div>
+                <button type="submit" id="sub-btn" class="submit-button">Submit</button> <!--this id only applies to this submit button-->
+        </div>
+        </form>
+        </section>
+        <section>
+            <h2>Employees</h2>
+            <table class="table"> <!-- this id may help adjust border css?-->
+                <thead>
+                    <tr> <th>First Name</th> <th>Last Name</th> <th>ID</th> <th>Title</th> <th> Annual Salary</th> </tr>
+                </thead>
+                <tbody id="employee-table">
+
+                </tbody>
+                <tfoot class="tfoot-row"> <!--This SHOULD be an empty footer row at the bottom-->
+
+                </tfoot>
+            </table>
+        </section>
+        <section>
+            <h3 id="monthly-sum" class="total-monthly-header"> Total Monthly</h3> <!--This needs to be REMOVED from index. Will be appended Right justified AND will show total monthly salary-->
+        </section>
+    </main>
 </body>
 </html>

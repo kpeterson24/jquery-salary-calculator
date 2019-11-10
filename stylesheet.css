@@ -1,0 +1,10 @@
+h1 {
+    text-align: center;
+}
+th {
+    text-align: inherit;
+  }
+
+.submit-button {
+    float: right;
+}
