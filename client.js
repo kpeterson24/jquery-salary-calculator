@@ -12,6 +12,8 @@ function onReady() {
 
 // This array is for when we use the form and it will store here.
     let employeeArray = [];
+    let totalSalary = 0;
+    let totalMonthly = 0;
 
 //take input from the form
 function putInputInArray(event) {
@@ -41,6 +43,7 @@ function putInputInArray(event) {
 
     //call function to DOM 
     showEmployees(employeeArray);
+    sumOfSalary(newEmployee.annualSalary);
 }
 // show employees entered in the dom
 function showEmployees(employeeList) {
@@ -69,18 +72,14 @@ function removeEmployee() {
 }
 
 //display total salary combine
-    //loop through array to grab annualSalaries
-    //for each annualSalary, add them up
-    let totalSalary = 0;
-function sumOfSalary(){
-    for (let i = 0; i < employeeArray.length; i++) {
-        totalSalary += Number( employeeArray[ i ]);
-    }
-    console.log('total Salay:', totalSalary );
+function sumOfSalary(monthly){
+    totalSalary += Number( monthly ) ;
+    console.log( totalSalary );
+
+    //total monthly
+    totalMonthly = totalSalary / 12;
 
     let el = $('#total-salary');
     el.empty();
-    el.append(totalSalary);
+    el.append(totalMonthly);
 }    
-
-    
