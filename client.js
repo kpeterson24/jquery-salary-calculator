@@ -3,12 +3,15 @@ $( document ).ready(onReady);
 function onReady() {
     $('#sub-btn').on('click', putInputInArray );
     console.log( ' hiya' );
-    showEmployees(employeeArray);    
+    showEmployees(employeeArray); 
+    
+    //set-up click handler for delete button
+    //need to forst select soemthing alreadsy on the dom -'#employee-table'
+    $('#employee-table').on('click', '.delete', removeEmployee );
 }
 
 // This array is for when we use the form and it will store here.
     let employeeArray = [];
-    // let employeeArray = [];
 
 //take input from the form
 function putInputInArray(event) {
@@ -55,3 +58,29 @@ function showEmployees(employeeList) {
         `)
     }
 }
+
+//remove delete button function
+function removeEmployee() {
+    console.log('removeEmployee');
+
+    let button = $(this);
+      console.log('button', button);
+    button.closest('tr').remove();
+}
+
+//display total salary combine
+    //loop through array to grab annualSalaries
+    //for each annualSalary, add them up
+    let totalSalary = 0;
+function sumOfSalary(){
+    for (let i = 0; i < employeeArray.length; i++) {
+        totalSalary += Number( employeeArray[ i ]);
+    }
+    console.log('total Salay:', totalSalary );
+
+    let el = $('#total-salary');
+    el.empty();
+    el.append(totalSalary);
+}    
+
+    

@@ -8,3 +8,7 @@ th {
 .submit-button {
     float: right;
 }
+
+.tfoot-row {
+    background-color: gray;
+}
